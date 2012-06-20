@@ -63,10 +63,10 @@ Menu.prototype =
 		space = document.createTextNode(" ");
 		this.container.appendChild(space);
 		
-		this.save = document.createElement("span"); //getElementById('save');
-		this.save.className = 'button';
-		this.save.innerHTML = 'Save';
-		this.container.appendChild(this.save);
+		this.send = document.createElement("span"); //getElementById('save');
+		this.send.className = 'button';
+		this.send.innerHTML = 'Send';
+		this.container.appendChild(this.send);
 		
 		space = document.createTextNode(" ");
 		this.container.appendChild(space);

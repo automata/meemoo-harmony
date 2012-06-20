@@ -64,6 +64,7 @@ function init()
 	canvas.width = SCREEN_WIDTH;
 	canvas.height = SCREEN_HEIGHT;
 	canvas.style.cursor = 'crosshair';
+        canvas.id = "maincanvas";
 	container.appendChild(canvas);
 	
 	context = canvas.getContext("2d");
@@ -88,8 +89,8 @@ function init()
 	menu.backgroundColor.addEventListener('click', onMenuBackgroundColor, false);
 	menu.backgroundColor.addEventListener('touchend', onMenuBackgroundColor, false);
 	menu.selector.addEventListener('change', onMenuSelectorChange, false);
-	menu.save.addEventListener('click', onMenuSave, false);
-	menu.save.addEventListener('touchend', onMenuSave, false);
+	menu.send.addEventListener('click', onMenuSend, false);
+	menu.send.addEventListener('touchend', onMenuSend, false);
 	menu.clear.addEventListener('click', onMenuClear, false);
 	menu.clear.addEventListener('touchend', onMenuClear, false);
 	menu.about.addEventListener('click', onMenuAbout, false);
@@ -376,17 +377,18 @@ function onMenuMouseOut()
 	isMenuMouseOver = false;
 }
 
-function onMenuSave()
+function onMenuSend()
 {
 	// window.open(canvas.toDataURL('image/png'),'mywindow');
-	flatten();
-	window.open(flattenCanvas.toDataURL('image/png'),'mywindow');
+	//flatten();
+	//window.open(flattenCanvas.toDataURL('image/png'),'mywindow');
+        Meemoo.inputs.send();
 }
 
 function onMenuClear()
 {
-	if (!confirm("Are you sure?"))
-		return;
+	//if (!confirm("Are you sure?"))
+	//	return;
 		
 	context.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
